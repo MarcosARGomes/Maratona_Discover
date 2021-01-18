@@ -1,3 +1,4 @@
+/* Global =======================*/
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +7,21 @@
 
 body{
     background: #f0f2f5;
-    color: green;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Header =========================== */
+header{
+    background: #2d4a22;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#logo {
+    color: #fff;
+    font-weight: 100;
+}
+
+header h1{
+
+}
