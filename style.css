@@ -10,10 +10,23 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.container{
+    width:min(90vw, 800px);
+    margin: auto;
+}
+/* Titles =========================== */
+h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: #363f5f;
+    font-weight: normal;
+}
+
+
 /* Header =========================== */
 header{
     background: #2d4a22;
-    padding: 2rem 0;
+    padding: 2rem 0 10rem;
     text-align: center;
 }
 
@@ -22,6 +35,20 @@ header{
     font-weight: 100;
 }
 
-header h1{
+/* Balance =========================== */
+#balance{
+    margin-top: -8rem;
+    text-align: center;
+}
+#balance h2{
+    color: white;
+    margin-top:0 ;
+}
+#balance h3{
 
+}
+
+/* Footer =========================== */
+footer{
+    text-align: center;
 }
