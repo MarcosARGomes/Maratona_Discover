@@ -110,14 +110,17 @@ header{
     color: white;
 }
 /* table =========================== */
+#transaction{
+    display: block;
+    overflow-x:auto ;
+    width: 100%;
+}
 
 #data-table{
-    display: block;
+    
     width: 100%;
     border-spacing:0 0.5rem;
-    color: #969cb3;
-
-    overflow-x: auto;
+    color: #969cb3; 
 }
 
 table thead tr th:first-child,
