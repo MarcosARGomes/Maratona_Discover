@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 93.75%;
+}
+
 body{
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
@@ -168,3 +172,5 @@ footer{
     color: var(--dark-blue);
     opacity: 0.6;
 }
+
+/* Responsive =========================== */
