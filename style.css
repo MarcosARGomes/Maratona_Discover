@@ -80,14 +80,24 @@ button:hover {
 }
 
 .button.cancel{
-    width: 100%;
+    color: white;
+    
+    border-radius: 0.25rem;
+    background-color: rgb(194, 17, 17);
+
+    width: 50%;
     height: 50px;
-
-    border: 1px;
-    border-color: red;
-
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 
+    /*opacity: 0.6;*/
+}
+
+.button.cancel:hover{
+    background-color:  #d81e1e;
 }
 
 /* Header =========================== */
