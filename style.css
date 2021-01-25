@@ -182,20 +182,53 @@ td.expenses{
     align-items: center;
     justify-content: center;
 
+    /*opacity: 0;
+    visibility: hidden;*/
+
 
 }
 
 .modal{
     background: #f0f2f5;
-    padding: 2.4rem;
-    position: relative;
-    
+    padding: 2.4rem; 
+    /*width: 90%;
+    max-width: 500px; */
 }
 
     
+/* Form =========================== */
 
+#form{
+    max-width: 500px;
+}
 
+#fomm h2{
+    margin-top: 0;
+}
 
+input{
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+
+    width: 100%;
+}
+
+.input-group{
+    margin-top: 0.8rem;
+}
+
+.input-group small{
+    opacity: 0.4;
+}
+
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
 
 
 /* Footer =========================== */
