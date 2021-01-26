@@ -223,8 +223,8 @@ td.expenses{
     align-items: center;
     justify-content: center;
 
-    /*opacity: 0;
-    visibility: hidden;*/
+    opacity: 0;
+    visibility: hidden;
 
 
 }
@@ -232,8 +232,8 @@ td.expenses{
 .modal{
     background: #f0f2f5;
     padding: 2.4rem; 
-    /*width: 90%;
-    max-width: 500px; */
+    width: 90%;
+    max-width: 500px;
 }
 
     

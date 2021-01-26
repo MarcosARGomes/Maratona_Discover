@@ -49,8 +49,11 @@
             <section id="transaction">
                 <h2 class="sr-only">Transações</h2>
                 
-                <a href="#" class="button new">
-                    +Nova transação
+                <a
+                    href="#"
+                    onclick="Modal.open()"
+                    class="button new">
+                    + Nova transação
                 </a>
 
                 <table id="data-table">
@@ -94,7 +97,7 @@
             </section>
         </main>
 
-        <div class="modal-overlay active">
+        <div class="modal-overlay">
             <div class="modal">
                     <div id="form">
                         <h2>Nova Transação</h2>
@@ -154,11 +157,19 @@
         </footer>
 
         <script>
-            Modal = {
+            const Modal = {
                 open(){
-                    
+                    // Abrir modal
+                    // Adcionar a class active ao modal
+                    alert('abrir o modal')
+ 
+                },
+                close(){
+                    // Fechar o modal
+                    // remover a class active do modal
                 }
             }
+
         </script>
 
     </body>
