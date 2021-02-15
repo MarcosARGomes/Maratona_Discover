@@ -80,7 +80,9 @@ const DOM = {
     },
     innerHTMLTransaction(transaction){
 
-        const CSSclass = transaction.amount > 0 ? "income": "expense"
+        const CSSclass = transaction.amount > 0 ? "income": "expenses"
+        const amount = Utils.formatCurrency(transaction.amount)
+        
 
         const html = 
         `
@@ -96,7 +98,13 @@ const DOM = {
     }
 }
 
+const Utils = {
+    formatCurrency(value){
+        const signal = Number(value) < 0 ? "-" : ""
 
+
+    }
+}
 
 transactions.forEach(function(transaction) {
     DOM.addTransaction(transaction)
