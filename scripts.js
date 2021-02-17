@@ -70,6 +70,7 @@ const Transaction = {
 
 const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
+
     addTransaction(transaction, index){
         
         const tr = document.createElement('tr')
@@ -87,7 +88,7 @@ const DOM = {
         const html = 
         `
             <td class="description">${transaction.description}</td>
-            <td  class="${CSSclass}">${transaction.amount}</td>
+            <td  class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
             <td>
                 <img src="assets/minus.svg" alt="Remover Transação">
@@ -95,6 +96,21 @@ const DOM = {
         
         `
         return html
+    },
+
+    updateBalance(){
+        document
+            .getElementById('incomeDisplay')
+            .innerHTML = "Soma das entradas"
+    
+        document
+            .getElementById('expensesDisplay')
+            .innerHTML = "Soma das saidas"
+    
+    
+        document
+            .getElementById('totalDisplay')
+            .innerHTML = "Total"
     }
 }
 
@@ -122,3 +138,5 @@ const Utils = {
 transactions.forEach(function(transaction) {
     DOM.addTransaction(transaction)
 })
+
+DOM.updateBalance()
