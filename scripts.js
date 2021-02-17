@@ -36,14 +36,14 @@ const transactions = [
     {   
          id: 3,
         description: 'Internet',
-        amount:-20000,
+        amount:-200000,
         date: '23/01/2021',
 
     },
     {   
          id: 4,
         description: 'App',
-        amount:20000,
+        amount:200000,
         date: '23/01/2021',
 
     }
@@ -52,15 +52,27 @@ const transactions = [
 
 const Transaction = {
     incomes(){
-        //somar as entradas
+        let income = 0;
+        transactions.forEach(transaction => {
+            if(transaction.amount > 0){
+                income += transaction.amount;
+            };
+        });
+        return income
     },
 
     expenses(){
-        //somar as saídas
+        let income = 0;
+        transactions.forEach(transaction => {
+            if(transaction.amount < 0){
+                income += transaction.amount;
+            };
+        });
+        return income
     },
 
     total(){
-        // entradas - Saídas
+        return Transaction.expenses() + Transaction.incomes();
 
     }
     
@@ -101,16 +113,16 @@ const DOM = {
     updateBalance(){
         document
             .getElementById('incomeDisplay')
-            .innerHTML = "Soma das entradas"
+            .innerHTML = Transaction.incomes()
     
         document
             .getElementById('expensesDisplay')
-            .innerHTML = "Soma das saidas"
+            .innerHTML = Transaction.expenses()
     
     
         document
             .getElementById('totalDisplay')
-            .innerHTML = "Total"
+            .innerHTML = Transaction.total()
     }
 }
 
