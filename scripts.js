@@ -106,9 +106,18 @@ const Utils = {
 
         value = Number(value) / 100
 
-        console.log(signal)
+        value = value.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        })
+
+
+        console.log(signal + value)
+        return signal + value
     }
+   
 }
+
 
 transactions.forEach(function(transaction) {
     DOM.addTransaction(transaction)
