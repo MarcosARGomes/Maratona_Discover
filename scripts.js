@@ -56,6 +56,9 @@ const Transaction = {
     add(transaction){
         Transaction.all.push(transaction)
 
+        App.reload()
+        
+
         console.log(Transaction.all)
     },
 
@@ -131,6 +134,10 @@ const DOM = {
         document
             .getElementById('totalDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    clearTransactions(){
+        DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -155,15 +162,36 @@ const Utils = {
 }
 
 
-transactions.forEach(function(transaction) {
-    DOM.addTransaction(transaction)
-})
 
-DOM.updateBalance()
+
+
+
+const App= {
+    init() {
+        Transaction.all.forEach( transaction => {
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()
+        
+        
+    },
+
+    reload () {
+        DOM.clearTransactions()
+        App.init()
+
+    },
+}
+
+App.init ()
+
+
+
 
 Transaction.add({
     id: 39,
     description: 'Ola',
-    amount: 200,
+    amount: 200000,
     date: '23/01/2021'
 })
