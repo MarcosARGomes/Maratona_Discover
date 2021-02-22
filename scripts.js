@@ -189,9 +189,7 @@ const Form = {
             date.trim() === "" ){
                 throw new Error ("Por favor, preencha todos os campos")
             }
-        )
-
-    },
+        },
 
     submit(event){
         event.preventDefault()
