@@ -19,8 +19,6 @@ const Modal = {
     }
 }
 
-
-
 const Transaction = {
     all: [
         { 
@@ -49,7 +47,7 @@ const Transaction = {
             amount:200000,
             date: '23/01/2021',
     
-        }
+        },
     
     ],
 
@@ -59,7 +57,7 @@ const Transaction = {
         App.reload()
         
 
-        console.log(Transaction.all)
+       
     },
 
     remove(index){
@@ -95,7 +93,6 @@ const Transaction = {
     
 
 }
-
 
 const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
@@ -161,12 +158,17 @@ const Utils = {
         })
 
 
-        console.log(signal + value)
+        
         return signal + value
     }
    
 }
 
+const Form = {
+    submit(event){
+        console.log(event)
+    }
+}
 
 
 
@@ -192,14 +194,4 @@ const App= {
 
 App.init ()
 
-
-
-
-Transaction.add({
-    
-    description: 'Ola',
-    amount: 200000,
-    date: '23/01/2021'
-})
-
-Transaction.remove(0)
+Form.submit()
