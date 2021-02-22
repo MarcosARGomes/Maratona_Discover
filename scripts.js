@@ -165,14 +165,25 @@ const Utils = {
 }
 
 const Form = {
+    formatData(){
+        console.log('Formatar os dados')
+    },
+
+    validateField(){
+        console.log('Validar os dados')
+    },
+
     submit(event){
+        event.preventDefault()
+
+        Form.validateField()
+
+        Form.formatData()
+
+
         console.log(event)
     }
 }
-
-
-
-
 
 const App= {
     init() {
