@@ -147,7 +147,7 @@ const DOM = {
 const Utils = {
 
     formatAmount(value){
-        value = Number(value) * 100
+        value = Number(value.replace(/\,\./g,"")) * 100
      
 
         return value
@@ -236,9 +236,8 @@ const Form = {
             Form.validateFields() //validar dados
            const transaction = Form.formatValues()//formatar valores dos campos
             Form.saveTrasaction(transaction) // salvar
-            Form.clearFields()//apagar os dados do formulario
+            Form.clearFields()//limpar os campos do formulario
             Modal.close()//fechar a tela
-            App.reload()//atualizar aplicação
         }catch (error){
             alert(error.message)
         }
