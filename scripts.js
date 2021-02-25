@@ -100,12 +100,13 @@ const DOM = {
     addTransaction(transaction, index){
         
         const tr = document.createElement('tr')
-        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction,index)
+        tr.dataset.index = index
 
         DOM.transactionsContainer.appendChild(tr)
 
     },
-    innerHTMLTransaction(transaction){
+    innerHTMLTransaction(transaction,index){
 
         const CSSclass = transaction.amount > 0 ? "income": "expenses"
         const amount = Utils.formatCurrency(transaction.amount)
@@ -117,7 +118,7 @@ const DOM = {
             <td  class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
             <td>
-                <img src="assets/minus.svg" alt="Remover Transação">
+                <img onclick="Transaction.remove(${index})" src="assets/minus.svg" alt="Remover Transação">
              </td>
         
         `
@@ -230,11 +231,12 @@ const Form = {
     },
 
     submit(event){
+       
         event.preventDefault()
 
         try{
             Form.validateFields() //validar dados
-           const transaction = Form.formatValues()//formatar valores dos campos
+            const transaction = Form.formatValues()//formatar valores dos campos
             Form.saveTrasaction(transaction) // salvar
             Form.clearFields()//limpar os campos do formulario
             Modal.close()//fechar a tela
@@ -251,8 +253,8 @@ const Form = {
 
 const App= {
     init() {
-        Transaction.all.forEach( transaction => {
-            DOM.addTransaction(transaction)
+        Transaction.all.forEach( (transaction, index) => {
+            DOM.addTransaction(transaction,index)
         })
         
         DOM.updateBalance()
@@ -266,6 +268,16 @@ const App= {
 
     },
 }
+
+const Storage = {
+    get(){
+        return JSON.parse(localStorage.getItem('dev.finances:transactions')) || []
+    },
+    set(transactions){
+        localStorage.setItem("dev.finances:transactions",JSON.stringify(transactions))
+    }
+}
+
 
 App.init ()
 
